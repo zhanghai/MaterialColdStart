@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+  ~ Copyright (c) 2015 Zhang Hai <Dreaming.in.Code.ZH@Gmail.com>
+  ~ All Rights Reserved.
+  -->
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3" height="$(calc "2 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + 1")">
+
+  <g>
+    <rect x="0" y="$(calc "1 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}")")" width="1" height="1" />
+    <rect x="1" y="0" width="1" height="1" />
+    <rect x="2" y="1" width="1" height="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + 1")" />
+    <rect x="1" y="$(calc "1 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + 1")" width="1" height="1" />
+  </g>
+
+  <g transform="translate(1,1)">
+    <rect x="0" y="0" width="1" height="$(calc "$(dp "${STATUS_BAR_HEIGHT}")")" fill="${COLOR_PRIMARY_DARK}" />
+    <rect x="0" y="$(calc "$(dp "${STATUS_BAR_HEIGHT}")")" width="1" height="$(calc "$(dp "${APPBAR_HEIGHT}")")" fill="${COLOR_PRIMARY}" />
+    <rect x="0" y="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}")")" width="1" height="1" fill="${COLOR_WINDOW_BACKGROUND}" />
+  </g>
+</svg>
