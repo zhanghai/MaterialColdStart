@@ -20,11 +20,11 @@ This project has been around in my mind for several months, until I found my way
 
 This project generates nine-patch drawables for use as `android:windowBackground`.
 
-## Why nine-patch?
+### Why nine-patch?
 
 Only static drawables can be loaded by framework as preview, and all other drawables will only retain aspect ratio when width/height is set. So we need to use nine-patch.
 
-## How to generate nine-patch?
+### How to generate nine-patch?
 
 However, nine-patches need to be bitmaps, but we have various dimension sizes changing with configuration, and we still have to retain the one-pixel border while scaling up the content area.
 
