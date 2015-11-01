@@ -2,6 +2,8 @@
 
 Utilize the window background during cold start time (the time between user launches your app and `Activity.onCreate()` is called) to make your app look faster.
 
+This project comes with some templates for Material Designed apps, but you can also roll your own if you wish.
+
 ## Preview
 
 // TODO
