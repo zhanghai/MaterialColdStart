@@ -6,7 +6,13 @@ This project comes with some templates for Material Designed apps, but you can a
 
 ## Preview
 
-// TODO
+Blank cold start:
+
+![Blank cold start](preview/blank_cold_start.gif)
+
+Material cold start:
+
+![Material cold start](preview/material_cold_start.gif)
 
 ## Inspiration
 
