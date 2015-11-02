@@ -17,7 +17,7 @@ When your app process is cached in memory but main activity is relaunched, this 
 
 ![Normal case](preview/normal_case.gif)
 
-Notice the small period of time when appbar and status bar is "drawn" but no text is shown — _this is the trick_. Without the help of our cold start window background, users will see a glitch of whiteness over the appbar and statusbar.
+Notice the small period of time when appbar and status bar is "drawn" but no text is shown — _*this is the trick*_. Without the help of our cold start window background, users will see a glitch of whiteness over the appbar and statusbar.
 
 ## Inspiration
 
