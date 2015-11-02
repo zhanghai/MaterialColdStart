@@ -5,18 +5,26 @@
   ~ All Rights Reserved.
   -->
 
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3" height="$(calc "2 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + 1")">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3" height="$(calc "2 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + $(dp "${APPBAR_SHADOW_HEIGHT}") + 1")">
+
+  <defs>
+    <linearGradient id="shadowBottom" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="${COLOR_SHADOW_START}" stop-opacity="${COLOR_SHADOW_START_OPACITY}" />
+      <stop offset="100%" stop-color="${COLOR_SHADOW_END}" stop-opacity="${COLOR_SHADOW_END_OPACITY}" />
+    </linearGradient>
+  </defs>
 
   <g>
-    <rect x="0" y="$(calc "1 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}")")" width="1" height="1" />
+    <rect x="0" y="$(calc "1 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + $(dp "${APPBAR_SHADOW_HEIGHT}")")" width="1" height="1" />
     <rect x="1" y="0" width="1" height="1" />
-    <rect x="2" y="1" width="1" height="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + 1")" />
-    <rect x="1" y="$(calc "1 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + 1")" width="1" height="1" />
+    <rect x="2" y="1" width="1" height="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + $(dp "${APPBAR_SHADOW_HEIGHT}") + 1")" />
+    <rect x="1" y="$(calc "1 + $(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}") + $(dp "${APPBAR_SHADOW_HEIGHT}") + 1")" width="1" height="1" />
   </g>
 
   <g transform="translate(1,1)">
     <rect x="0" y="0" width="1" height="$(calc "$(dp "${STATUS_BAR_HEIGHT}")")" fill="${COLOR_PRIMARY_DARK}" />
     <rect x="0" y="$(calc "$(dp "${STATUS_BAR_HEIGHT}")")" width="1" height="$(calc "$(dp "${APPBAR_HEIGHT}")")" fill="${COLOR_PRIMARY}" />
-    <rect x="0" y="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}")")" width="1" height="1" fill="${COLOR_WINDOW_BACKGROUND}" />
+    <rect x="0" y="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}")")" width="1" height="$(calc "$(dp "${APPBAR_SHADOW_HEIGHT}") + 1")" fill="${COLOR_WINDOW_BACKGROUND}" />
+    <rect x="0" y="$(calc "$(dp "${STATUS_BAR_HEIGHT}") + $(dp "${APPBAR_HEIGHT}")")" width="1" height="$(calc "$(dp "${APPBAR_SHADOW_HEIGHT}")")" fill="url(#shadowBottom)" />
   </g>
 </svg>
