@@ -11,7 +11,13 @@ Blank cold start (Glitch on status bar and appbar) v.s. Material cold start (Pre
 ![Blank cold start](preview/blank_cold_start.gif)
 ![Material cold start](preview/material_cold_start.gif)
 
-I deliberately picked a slower device to show the effect clearer, but this improvement is also delightful on faster devices upon every launch of your app.
+(I deliberately picked a slower device to show the effect clearer, but this improvement is also delightful on faster devices.)
+
+When your app process is cached in memory but main activity is relaunched, this technique gives the illusion of a much quicker start up.
+
+![Normal case](preview/normal_case.gif)
+
+Notice the time when appbar and status bar is "drawn" but no text is shown — this is the trick. Without the help of our cold start window background, users will see a flash of whiteness over the appbar and statusbar.
 
 ## Inspiration
 
@@ -67,7 +73,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
     </activity>
     ```
 
-5. Finally in your `MainActivity.java`, set the theme back for the normal window background:
+5. Finally in your `MainActivity.java`, set the theme back for the normal window background, which will be transitioned into:
 
     ```java
     public class MainActivity extends AppCompatActivity {
