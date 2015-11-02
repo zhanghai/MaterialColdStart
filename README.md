@@ -39,7 +39,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
 
 ## Usage
 
-> Note: To generate your own image assets, you will probably need a Linux installation. I may upload some pre-built ones later.
+> Note: To generate your own image assets, you will probably need a Linux installation. I may upload some pre-built assets later.
 
 1. Modified the `.conf` files to reflect the layout of your main activity. You can set some of the values to `0` so that the corresponding area will be hidden.
 
@@ -47,41 +47,41 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
 
 3. Make a new theme for your main activity:
 
-```xml
-<style name="AppTheme.MaterialColdStart">
-    <item name="android:windowBackground">@drawable/window_background_statusbar_toolbar_tab</item>
-</style>
-```
+    ```xml
+    <style name="AppTheme.MaterialColdStart">
+        <item name="android:windowBackground">@drawable/window_background_statusbar_toolbar_tab</item>
+    </style>
+    ```
 
 4. And set the new theme in your `AndroidManifest.xml`:
 
-```xml
-<activity
-    android:name=".MainActivity"
-    android:theme="@style/AppTheme.ColdStart">
+    ```xml
+    <activity
+        android:name=".MainActivity"
+        android:theme="@style/AppTheme.ColdStart">
 
-    <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
-</activity>
-```
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    ```
 
 5. Finally in your `MainActivity.java`, set the theme back for the normal window background:
 
-```java
-public class MainActivity extends AppCompatActivity {
+    ```java
+    public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
 
-        // Make sure this line comes before calling super.onCreate().
-        setTheme(R.style.AppTheme);
+            // Make sure this line comes before calling super.onCreate().
+            setTheme(R.style.AppTheme);
 
-        super.onCreate(savedInstanceState);
+            super.onCreate(savedInstanceState);
+        }
     }
-}
-```
+    ```
 
 6. Enjoy the updated cold start experience!
 
