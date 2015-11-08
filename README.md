@@ -66,7 +66,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
     ```xml
     <activity
         android:name=".MainActivity"
-        android:theme="@style/AppTheme.ColdStart">
+        android:theme="@style/AppTheme.MaterialColdStart">
 
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
