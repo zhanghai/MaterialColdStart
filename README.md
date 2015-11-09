@@ -49,7 +49,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
 
 > Note: To generate your own image assets, you will probably need a Linux installation. I may upload some pre-built assets later.
 
-1. Modified the `.conf` files to reflect the layout of your main activity. You can set some of the values to `0` so that the corresponding area will be hidden.
+1. Modify the `.conf` files to reflect the layout of your main activity. You can modify the values inside so that the corresponding dimension will be changed. For instance, you can set `APPBAR_HEIGHT` to `56`/`64` if you don't have a `TabLayout` in your appbar.
 
 2. Run `gen-png.sh` and copy the output in `gen/` to your `res` directory. (requires `bash`, `inkscape` and `gcalccmd`(from `gnome-calculator`))
 
