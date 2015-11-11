@@ -49,11 +49,13 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
 
 > Note: To generate your own image assets, you will probably need a Linux installation. I may upload some pre-built assets later.
 
-1. Modify the `.conf` files to reflect the layout of your main activity. You can modify the values inside so that the corresponding dimension will be changed. For instance, you can set `APPBAR_HEIGHT` to `56`/`64` if you don't have a `TabLayout` in your appbar.
+1. Modify the `.conf` files to reflect the layout of your main activity.
 
-2. Run `gen-png.sh` and copy the output in `gen/` to your `res` directory. (requires `bash`, `inkscape` and `gcalccmd`(from `gnome-calculator`))
+2. Optional - adjusting the appbar height. By default the script assumes that your app does have a `TabLayout`. If however your app does not, you need to modify each `window_background_statusbar_toolbar_tab.9.shsvg.conf` file in the given raw directories and change the `APPBAR_HEIGHT` from `112` to `64` and `104` to `56`.
 
-3. Make a new theme for your main activity:
+3. Run `gen-png.sh` and copy the output in `gen/` to your `res` directory. (requires `bash`, `inkscape` and `gcalccmd`(from `gnome-calculator`))
+
+4. Make a new theme for your main activity:
 
     ```xml
     <style name="AppTheme.MaterialColdStart">
@@ -61,7 +63,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
     </style>
     ```
 
-4. And set the new theme in your `AndroidManifest.xml`:
+5. And set the new theme in your `AndroidManifest.xml`:
 
     ```xml
     <activity
@@ -75,7 +77,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
     </activity>
     ```
 
-5. Finally in your `MainActivity.java`, set the theme back for the normal window background, which will be transitioned into:
+6. Finally in your `MainActivity.java`, set the theme back for the normal window background, which will be transitioned into:
 
     ```java
     public class MainActivity extends AppCompatActivity {
@@ -91,7 +93,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
     }
     ```
 
-6. Enjoy the updated cold start experience!
+7. Enjoy the updated cold start experience!
 
 ## Pre-built assets
 
