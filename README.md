@@ -51,7 +51,7 @@ The solution, a "new" format called `shsvg` (Shell SVG), is implemented as in [D
 
 1. (Optional) Adjust the appbar height (and more if you want). The default configuration assumes that your app have a `TabLayout`. If however your app does not, you need to modify each `window_background_statusbar_toolbar_tab.9.shsvg.conf` file in the given raw directories and change the `APPBAR_HEIGHT` from `112` to `64` and `104` to `56`.
 
-2. Run `gen-png.sh` and copy the output in `gen/` to your `res` directory. (requires `bash`, `inkscape` and `gcalccmd`(from `gnome-calculator`))
+2. Run `gen-png.sh` and copy the output in `gen/` to your `res` directory. (requires `bash`, `inkscape` and `gcalccmd` (from `gnome-calculator`))
 
 3. Make a new theme for your main activity:
 
